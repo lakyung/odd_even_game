@@ -16,7 +16,7 @@ for (let index = 0; index < 10; index++) {
     점개수 = 0
     정답 = -1
     홀짝 = -1
-    for (let index = 0; index < randint(1, 5); index++) {
+    for (let index = 0; index < randint(1, 16); index++) {
         let list: number[] = []
         x = randint(0, 4)
         y = randint(0, 4)
@@ -36,15 +36,18 @@ for (let index = 0; index < 10; index++) {
     } else {
         정답 = 0
     }
-    basic.pause(2000)
+    basic.pause(3000)
+    basic.showString("" + 정답 + 홀짝)
     if (정답 == 홀짝) {
-        music.playMelody("C E G C5 - - - - ", 120)
+        music.playMelody("C E G C5 - - - - ", 344)
         맞춘개수 += 1
     } else {
-        music.playMelody("- - - - - - - C5 ", 120)
+        music.playMelody("- - - - - - - C5 ", 344)
     }
     basic.clearScreen()
 }
 if (7 <= 맞춘개수) {
     basic.showIcon(IconNames.Happy)
+} else {
+    basic.showIcon(IconNames.Sad)
 }
