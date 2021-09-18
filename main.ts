@@ -7,7 +7,7 @@ input.onButtonPressed(Button.B, function () {
 // 홀짝게임 
 // 방법 : 점 개수가 홀수이면 A버튼, 짝수이면 B버튼을 누른다.
 // 게임 횟수 : 10번
-// 제한 시간 : 3초
+// 제한 시간 : 3초  (짧게해서 게임 LEVEL 높이기)
 // 
 let 리스트 = 0
 let xy값 = 0
@@ -17,6 +17,7 @@ let 홀짝 = 0
 let 정답 = 0
 let 점개수 = 0
 let 맞춘개수 = 0
+music.startMelody(music.builtInMelody(Melodies.Chase), MelodyOptions.Once)
 for (let index = 0; index < 10; index++) {
     점개수 = 0
     정답 = -1
@@ -55,4 +56,5 @@ if (7 <= 맞춘개수) {
 } else {
     basic.showIcon(IconNames.Sad)
 }
+basic.pause(1000)
 basic.showNumber(맞춘개수)
